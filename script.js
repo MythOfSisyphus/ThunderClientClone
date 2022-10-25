@@ -3,31 +3,42 @@ let ReqUrl = document.querySelector("#ReqUrl");
 let sendBtn = document.querySelector("#sendBtn");
 let data = document.querySelector('#data');
 
-let textarea = document.querySelector("#textarea");
+let Req_textarea = document.querySelector("#Req_textarea");
+let Res_textarea = document.querySelector("#Res_textarea");
+
+let Res_status = document.querySelector("#Res_status");
+let Res_size = document.querySelector("#Res_size");
 
 sendBtn.addEventListener('click', () => {
     const url = ReqUrl.value;
-
+    let status;
     if (ReqType.value == 'GET') {
         fetch(url)
-            .then(response => response.json())
+            .then(response => {
+               status = response.status;
+                return response.json()
+            })
             .then(result => {
                 console.log(result);
-                result.forEach(element => {
-                    let p = document.createElement("p");
-                    let ptext = document.createTextNode(element.title);
-                    p.appendChild(ptext);
-                    data.appendChild(p);
-                })
+                Res_textarea.innerHTML = JSON.stringify(result, null, 2);
+                Res_status.innerHTML = status;
+
             })
     }
 
     else if (ReqType.value == 'POST') {
         fetch(url, {
             method: 'POST',
-            body: JSON.stringify(textarea.value)
+            body: JSON.stringify(Req_textarea.value)
         })
-            .then(response => response.json())
-            .then(result => console.log(result))
+            .then(response => {
+                status = response.status;
+                return response.json()
+            })
+            .then(result => {
+                console.log(result);
+                Res_textarea.innerHTML = JSON.stringify(result, null, 2);
+                Res_status.innerHTML = status;
+            })
     }
 })

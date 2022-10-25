@@ -10,31 +10,50 @@
 <body>
     <section class="container mx-3 my-3">
         <!-- Name and logo -->
-        <header class="font-semibold text-3xl font-mono">
-            <h1>Client...</h1>
+        <header class="font-semibold text-3xl my-3">
+            <h1>Thunder Client...</h1>
         </header>
 
         <!-- main body of the projects -->
         <section>
             <div class="">
-                <select id="ReqType" class="border border-black py-1">
+                <select id="ReqType" class="border border-black py-1 font-semibold">
                     <option value="GET">GET</option>
                     <option value="POST">POST</option>
                     <option value="PUT">PUT</option>
                     <option value="DELETE">DELETE</option>
                 </select>
 
-                <input id="ReqUrl" placeholder="Enter url" class="border px-2 py-1 border-black w-2/4">
+                <input id="ReqUrl" placeholder="Enter url" class="border px-2 py-1 border-black w-3/4">
 
-                <button id="sendBtn" class="bg-black text-white px-2 py-[5px]">Send</button>
+                <button id="sendBtn" class="bg-black hover:bg-gray-700 hover:-translate-y-[0.5px] text-white px-2 py-[5px]">Send</button>
             </div>
         </section>
 
-        <div class="my-5">
-            <textarea id="textarea" autocomplete="on" class="border border-black font-mono text-lg w-2/3 px-2 py-1 "  rows="7"></textarea>
+        <!-- JSON input for post and put requests -->
+        <div class="container my-5 space-y-2">
+            <div>JSON Content</div>
+            <div>
+                <textarea id="Req_textarea" rows="7" cols="66" class="border border-black font-mono px-2 py-1 outline-none"></textarea>
+            </div>
         </div>
 
-        <div id="data"></div>
+        <hr class="bg-black py-[1px]">
+
+        <!-- Result of requests -->
+        <div class="container my-3">
+            <div class="text-lg">
+                <div>Response</div>
+                <div class="flex space-x-2">
+                    <div class="mr-2">Status: <span id="Res_status"></span></div>
+                    <div class="mx-2">Size: <span id="Res_size"></span></div>
+                </div>
+            </div>
+
+            <div>
+                <textarea id="Res_textarea" rows="12" cols="66" class="border border-black font-mono px-2 py-1 outline-none"></textarea>
+            </div>
+        </div>
 
     </section>
 
