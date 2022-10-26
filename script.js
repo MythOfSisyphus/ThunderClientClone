@@ -41,4 +41,19 @@ sendBtn.addEventListener('click', () => {
                 Res_status.innerHTML = status;
             })
     }
+
+    else if(ReqType.value == 'PUT') {
+        fetch(url, {
+            method: 'PUT',
+            mode: 'no-cors',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(Req_textarea.value)
+        })
+            .then(response => response.json())
+            .then(result => {
+                console.log(result);
+                Res_textarea.innerHTML = JSON.stringify(result, null, 2);
+                Res_status.innerHTML = status;
+            })
+    }
 })
