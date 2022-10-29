@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Client</title>
     <link rel="stylesheet" href="Tailwind.css">
 </head>
+
 <body class="bg-gray-400">
     <section class="container mx-3 my-3">
         <!-- Name and logo -->
@@ -26,34 +28,39 @@
 
                 <input id="ReqUrl" placeholder="Enter url" class="border px-2 py-1 border-black w-3/4">
 
-                <button id="sendBtn" class="bg-black hover:bg-gray-700 hover:-translate-y-[0.5px] text-white px-2 py-[5px]">Send</button>
+                <button id="sendBtn"
+                    class="bg-black hover:bg-gray-700 hover:-translate-y-[0.5px] text-white px-2 py-[5px]">Send</button>
             </div>
         </section>
 
-        <!-- JSON input for post and put requests -->
-        <div class="container my-5 space-y-2">
-            <div>JSON Content</div>
-            <div>
-                <textarea id="Req_textarea" rows="7" cols="66" class="border bg-gray-200 border-black font-mono px-2 py-1 outline-none"></textarea>
-            </div>
-        </div>
-
-        <hr class="bg-black w-[96%] py-[1px]">
-
-        <!-- Result of requests -->
-        <div class="container my-3">
-            <div class="text-lg">
-                <div>Response</div>
-                <div class="flex space-x-2">
-                    <div class="mr-2">Status: <span id="Res_status"></span></div>
-                    <div class="mx-2">Size: <span id="Res_size"></span></div>
+        <section class="lg:flex">
+            <!-- JSON input for post and put requests -->
+            <div class="container my-5 space-y-2">
+                <div>JSON Content</div>
+                <div>
+                    <textarea id="Req_textarea" rows="7" cols="66"
+                        class="border bg-gray-200 border-black font-mono px-2 py-1 outline-none"></textarea>
                 </div>
             </div>
 
-            <div>
-                <textarea id="Res_textarea" rows="12" cols="66" class="border bg-gray-200 border-black font-mono px-2 py-1 outline-none"></textarea>
+            <hr class="bg-black w-[96%] py-[1px] md:hidden">
+
+            <!-- Result of requests -->
+            <div class="container my-3">
+                <div class="text-lg">
+                    <div>Response</div>
+                    <div class="flex space-x-2">
+                        <div class="mr-2">Status: <span id="Res_status"></span></div>
+                        <div class="mx-2">Size: <span id="Res_size"></span></div>
+                    </div>
+                </div>
+
+                <div>
+                    <textarea id="Res_textarea" rows="12" cols="66"
+                        class="border bg-gray-200 border-black font-mono px-2 py-1 outline-none"></textarea>
+                </div>
             </div>
-        </div>
+        </section>
 
     </section>
 
@@ -61,4 +68,5 @@
     <!-- scripts -->
     <script src="script.js"></script>
 </body>
+
 </html>
