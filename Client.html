@@ -26,27 +26,27 @@
                     <option value="DELETE">DELETE</option>
                 </select>
 
-                <input id="ReqUrl" placeholder="Enter url" class="border px-2 py-1 w-80 border-black ">
+                <input id="ReqUrl" placeholder="Enter url" class="border px-2 py-1 w-80 lg:w-[22rem] xl:w-[36rem] border-black ">
 
                 <button id="sendBtn"
                     class="bg-black hover:bg-gray-700 hover:-translate-y-[0.5px] text-white px-2 py-[5px]">Send</button>
             </div>
         </section>
 
-        <section class="">
+        <section class="lg:flex lg:space-x-2">
             <!-- JSON input for post and put requests -->
-            <div class="container my-5 space-y-2">
+            <div class="container my-5 space-y-2 font-semibold">
                 <div>JSON Content</div>
                 <div>
                     <textarea id="Req_textarea"
-                        class="border bg-gray-200 border-black font-mono px-2 py-1 w-[100%] h-56 outline-none"></textarea>
+                        class="border bg-gray-100 md:w-[730px] md:h-[17rem] lg:h-[508px] xl:h-[582px] border-black font-mono px-2 py-1 w-[100%] h-48 outline-none"></textarea>
                 </div>
             </div>
 
            
 
             <!-- Result of requests -->
-            <div class="container my-3">
+            <div class="container my-3 lg:my-1 font-semibold lg:relative lg:-top-20">
                 <div class="text-lg">
                     <div>Response</div>
                     <div class="flex space-x-2">
@@ -56,8 +56,10 @@
                 </div>
 
                 <div>
+                    <!-- <div id="Res_textarea"
+                    class="border bg-gray-100 border-black font-mono px-2 py-1 h-[246px] w-[100%] outline-none overflow-y-scroll"></div> -->
                     <textarea id="Res_textarea"
-                        class="border bg-gray-200 border-black font-mono px-2 py-1 outline-none"></textarea>
+                    class="border bg-gray-100  md:w-[730px] md:h-[22rem] lg:h-[580px] xl:h-[652px] border-black font-mono px-2 py-1 h-[278px] w-[100%] outline-none"></textarea>
                 </div>
             </div>
         </section>
